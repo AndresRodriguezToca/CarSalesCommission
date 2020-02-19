@@ -98,6 +98,7 @@ Partial Class CarSalesCommissionForm
         '
         'TotalButton
         '
+        Me.TotalButton.Enabled = False
         Me.TotalButton.Location = New System.Drawing.Point(86, 351)
         Me.TotalButton.Name = "TotalButton"
         Me.TotalButton.Size = New System.Drawing.Size(88, 34)

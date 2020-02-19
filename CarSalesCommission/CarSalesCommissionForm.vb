@@ -74,24 +74,30 @@ Public Class CarSalesCommissionForm
         'Display Commission of the Sale
         CommissionLabel.Text = CommissionSale.ToString("c")
 
+        TradeInTextBox.Text = 0.ToString("c")
+
         NetPriceLabel.Enabled = False
         CommissionLabel.Enabled = False
         CalculateButton.Enabled = False
         ClearButton.Enabled = True
-
+        TotalButton.Enabled = True
 
     End Sub
 
     Private Sub TotalButton_Click(sender As Object, e As EventArgs) Handles TotalButton.Click
         'Display Total Commission Earned
         'Display Total Number of Car Sold
-        MessageBox.Show("The Total Number of the Car Sold is " & TotalNumberCarSold & " and the Total Commission Earned is " & TotalCommissionEarned.ToString("c"), "Total Income", MessageBoxButtons.OK)
+        If (TotalNumberCarSold > 0) Then
+            MessageBox.Show("The Total Number of the Car Sold is " & TotalNumberCarSold & vbNewLine & "The Total Commission Earned is " & TotalCommissionEarned.ToString("c"), "Total Income", MessageBoxButtons.OK)
+        End If
     End Sub
 
     Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
         'Display Total Commission Earned
         'Display Total Number of Car Sold
-        MessageBox.Show("The Total Number of the Car Sold is " & TotalNumberCarSold & " and the Total Commission Earned is " & TotalCommissionEarned.ToString("c"), "Total Income", MessageBoxButtons.OK)
+        If (TotalNumberCarSold > 0) Then
+            MessageBox.Show("The Total Number of the Car Sold is " & TotalNumberCarSold & vbNewLine & "The Total Commission Earned is " & TotalCommissionEarned.ToString("c"), "Total Income", MessageBoxButtons.OK)
+        End If
         'Exit Program
         Close()
     End Sub
