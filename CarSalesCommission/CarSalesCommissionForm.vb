@@ -3,16 +3,24 @@
 'Description:   allow the user to enter the price of the car and the trade-in, if they have one
 '               then calculate the net price and commission of the sale
 
+'Main Class
 Public Class CarSalesCommissionForm
+    'Constant Rate
     Const COMMISSION_RATE As Double = 0.1
 
+
+    'Variables
     Dim CarPrice As Double
     Dim TradeInValue As Double
     Dim GrossPay As Double
-    Dim TotalNumberCarSold As Integer = 0
     Dim CommissionSale As Double
-    Dim TotalCommissionEarned As Double = 0
 
+    'Initialization
+    Dim TotalCommissionEarned As Double = 0
+    Dim TotalNumberCarSold As Integer = 0
+
+
+    'Clear Button on Click Event
     Private Sub ClearButton_Click(sender As Object, e As EventArgs) Handles ClearButton.Click
         'Clear Price of the Car Sold
         CarPriceTextBox.Text = ""
@@ -31,6 +39,7 @@ Public Class CarSalesCommissionForm
 
     End Sub
 
+    'Calculate Button on Click Event
     Private Sub CalculateButton_Click(sender As Object, e As EventArgs) Handles CalculateButton.Click
         'Capture Car Price
         'Validate Car Price
@@ -84,6 +93,7 @@ Public Class CarSalesCommissionForm
 
     End Sub
 
+    'Total Button on Click Event
     Private Sub TotalButton_Click(sender As Object, e As EventArgs) Handles TotalButton.Click
         'Display Total Commission Earned
         'Display Total Number of Car Sold
@@ -92,6 +102,7 @@ Public Class CarSalesCommissionForm
         End If
     End Sub
 
+    'Exit Button on click Event
     Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
         'Display Total Commission Earned
         'Display Total Number of Car Sold
@@ -102,8 +113,12 @@ Public Class CarSalesCommissionForm
         Close()
     End Sub
 
+    'On Load Event
     Private Sub CarSalesCommissionForm_Load(sender As Object, e As EventArgs) Handles Me.Load
+        'Display Date Format on Data Label
         DateLabel.Text = Now.ToString(“d”)
+
+        'Display Time Format on TimeLabel
         TimeLabel.Text = Now.ToString(“t”)
     End Sub
 End Class
